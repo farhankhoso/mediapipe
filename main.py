@@ -1,6 +1,5 @@
 import cv2
 import mediapipe as mp
-import time
 
 cap = cv2.VideoCapture(0)
 
@@ -23,6 +22,7 @@ while True:
                 print(id, cx, cy)
                 # if id == 4:
                 cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
+            cv2.putText(img, 'Hand Tracking', (30, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (135, 24, 184), 4)
 
             mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
 
